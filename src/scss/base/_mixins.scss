@@ -1,0 +1,56 @@
+@use 'variables' as v;
+
+// @mixin heading() {
+//   text-transform: uppercase;
+//   font-size: 2.4rem;
+//   color: black;
+//   letter-spacing: 1px;
+// }
+
+// @mixin heading($color: black, $border-radius: false) {
+//   text-transform: uppercase;
+//   font-size: 2.4rem;
+//   color: $color;
+//   letter-spacing: 1px;
+//   background-color: black;
+
+//   @if $border-radius {
+//     border-radius: 1rem;
+//   }
+// }
+
+@mixin phone {
+  @media (min-width: v.$phone) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: v.$tablet) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: v.$desktop) {
+    @content;
+  }
+}
+
+@mixin desktopLarge {
+  @media (min-width: v.$desktopLarge) {
+    @content;
+  }
+}
+
+@mixin grid($columns, $gap) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  gap: $gap;
+}
+
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
