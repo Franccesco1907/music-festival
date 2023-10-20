@@ -6,7 +6,8 @@
   "scripts": {
     "sass": "sass --watch src/scss:build/css",
     "css": "gulp css",
-    "dev": "gulp dev"
+    "dev": "gulp dev",
+    "prod": "gulp prod"
   },
   "keywords": [
     "Sass",

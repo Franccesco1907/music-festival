@@ -64,7 +64,16 @@ function dev(done) {
   done();
 }
 
+function prod(done) {
+  src('src/scss/**/*.scss') // Identificar el archivo SASS
+  .pipe( sass() ) // Compilarlo
+  .pipe( dest('build/css') ); // Almacenarla en el disco duro
+
+  done();
+}
+
 exports.css = css;
 exports.versionWebp = versionWebp;
 exports.images = images;
 exports.dev = parallel(images, versionWebp, versionAvif, dev);
+exports.prod = parallel(images, versionWebp, versionAvif, prod);
