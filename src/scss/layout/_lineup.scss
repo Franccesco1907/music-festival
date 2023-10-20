@@ -26,10 +26,10 @@
   }
 }
 
-.scenario {
+.scenery {
   padding-top: 2rem;
 
-  .name-scenario {
+  .name-scenery {
     &:after {
       content: '';
       display: block;
@@ -43,11 +43,11 @@
   }
 }
 
-.edm .name-scenario:after{
+.edm .name-scenery:after{
   background-image: url(../img/icono_edm.png);
 }
 
-.rock .name-scenario:after{
+.rock .name-scenery:after{
   background-image: url(../img/icono_rock.png);
 }
 
