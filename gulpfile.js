@@ -58,11 +58,20 @@ function versionAvif(done) {
   done();
 }
 
-function dev(done) {
-  watch('src/scss/**/*.scss', css);
+function javascript( done ) {
+  src('src/js/**/*.js')
+    .pipe( dest('build/js') );
 
   done();
 }
+
+function dev(done) {
+  watch('src/scss/**/*.scss', css);
+  watch('src/js/**/*.js', javascript);
+
+  done();
+}
+
 
 function prod(done) {
   src('src/scss/**/*.scss') // Identificar el archivo SASS
@@ -73,7 +82,8 @@ function prod(done) {
 }
 
 exports.css = css;
+exports.js = javascript;
 exports.versionWebp = versionWebp;
 exports.images = images;
-exports.dev = parallel(images, versionWebp, versionAvif, dev);
-exports.prod = parallel(images, versionWebp, versionAvif, prod);
+exports.dev = parallel(images, versionWebp, versionAvif, javascript, dev);
+exports.prod = parallel(images, versionWebp, versionAvif, javascript, prod);
