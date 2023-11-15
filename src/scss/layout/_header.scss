@@ -3,7 +3,16 @@
 
 .header {
   background-color: v.$green;
-
+  @include m.tablet {
+    &.fixed {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      box-shadow: 0.1rem 0.2rem 0.3rem rgba(v.$black, 0.3);
+    }
+  }
   h1 {
     color: v.$white;
     text-align: center;
